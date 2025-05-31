@@ -10,8 +10,8 @@ terraform {
     }
   }
   backend "s3" {
-    bucket  = "{YOUR-S3-BUCKET-NAME}"
-    key     = "{YOUR-S3-BUCKET-KEY}"
+    bucket  = "dntnbucket002"
+    key     = "tasylog-dev.tfstate"
     region  = "ap-northeast-1"
     profile = "terraform"
   }
