@@ -49,15 +49,16 @@ resource "aws_db_subnet_group" "mysql_standalone_subnetgroup" {
 # RDS instance
 # ---------------------------------------------
 resource "aws_db_instance" "mysql_standalone" {
-  engine         = "mysql"
-  engine_version = "8.0.28"
 
-  identifier = "${var.project}-${var.environment}-mysql-standalone"
+  instance_class = "db.t3.micro" 
+  engine         = "mysql"
+  engine_version = "8.0.39"
+  identifier = "${var.project}-${var.environment}-mysql-standalone-v2"
 
   username = var.username
   password = var.password
 
-  instance_class = "db.t2.micro"
+# instance_class = "db.t2.micro"
 
   allocated_storage     = 20
   max_allocated_storage = 50
