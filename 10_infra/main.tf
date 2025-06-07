@@ -10,9 +10,9 @@ terraform {
     }
   }
   backend "s3" {
-    bucket  = "dntnbucket002"
-    key     = "tasylog-dev.tfstate"
-    region  = "ap-northeast-1"
+    bucket = "dntnbucket002"
+    key    = "tasylog-dev.tfstate"
+    region = "ap-northeast-1"
   }
 }
 
