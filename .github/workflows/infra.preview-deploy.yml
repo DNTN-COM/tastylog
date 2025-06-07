@@ -51,25 +51,14 @@ jobs:
 
       - name: Terraform init
         run: |
-          echo "AWS_PROFILE=$AWS_PROFILE"
-          echo "AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID"
-          echo "AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY"
           mkdir -p ~/.aws
           echo "[profile terraform]" >> ~/.aws/config
           echo "region = $AWS_REGION" >> ~/.aws/config
           echo "output = json" >> ~/.aws/config
-          echo "[terraform]" >> ~/.aws/credentials
-          echo "aws_access_key_id = $AWS_ACCESS_KEY_ID" >> ~/.aws/credentials
-          echo "aws_secret_access_key = $AWS_SECRET_ACCESS_KEY" >> ~/.aws/credentials
-          echo "region = $AWS_REGION" >> ~/.aws/credentials
+          
           aws configure list-profiles
-          cat ~/.aws/config
-          cat ~/.aws/credentials
-          unset AWS_SESSION_TOKEN
+          
           export AWS_PROFILE=terraform
           aws sts get-caller-identity --profile terraform
           aws s3 ls s3://dntnbucket002 --profile terraform
           TF_LOG=DEBUG terraform init -no-color
-
-
-          
