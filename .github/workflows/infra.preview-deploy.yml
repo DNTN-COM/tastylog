@@ -67,7 +67,7 @@ jobs:
 
       - name: Terraform plan
         run: |
-        　aws iam get-role --role-name app_iam_role
+          aws iam get-role --role-name app_iam_role
           #aws iam list-attached-role-policies --role-name app_iam_role 
           terraform plan \
             -var 'project=${{ env.TF_PROJECT }}' \
