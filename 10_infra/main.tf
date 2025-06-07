@@ -13,7 +13,6 @@ terraform {
     bucket  = "dntnbucket002"
     key     = "tasylog-dev.tfstate"
     region  = "ap-northeast-1"
-    profile = "terraform"
   }
 }
 
