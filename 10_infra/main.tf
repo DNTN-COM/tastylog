@@ -2,7 +2,7 @@
 # Terraform configuration
 # ---------------------------------------------
 terraform {
-  required_version = ">=0.13"
+  required_version = ">=1.0"
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -25,8 +25,8 @@ provider "aws" {
   region  = "ap-northeast-1"
 }
 
-provider "aws" {
-  alias   = "virginia"
-  profile = "terraform"
-  region  = "us-east-1"
+#provider "aws" {
+#  alias   = "virginia"
+#  profile = "terraform"
+#  region  = "us-east-1"
 }
