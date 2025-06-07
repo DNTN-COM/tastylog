@@ -58,3 +58,7 @@ jobs:
           #aws s3 ls s3://dntnbucket002
           #TF_LOG=DEBUG terraform init -no-color
           terraform init -no-color
+      
+      - name: Terraform validate
+        run: |
+          terraform validate -no-color
