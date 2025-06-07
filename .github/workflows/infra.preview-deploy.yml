@@ -48,10 +48,10 @@ jobs:
 
       - name: Terraform init
         run: |
-          mkdir -p ~/.aws
-          echo "[profile terraform]" >> ~/.aws/config
-          echo "region = $AWS_REGION" >> ~/.aws/config
-          echo "output = json" >> ~/.aws/config
+          #mkdir -p ~/.aws
+          #echo "[profile terraform]" >> ~/.aws/config
+          #echo "region = $AWS_REGION" >> ~/.aws/config
+          #echo "output = json" >> ~/.aws/config
           
           #aws configure list-profiles
           #export AWS_PROFILE=terraform
