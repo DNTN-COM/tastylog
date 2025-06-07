@@ -65,6 +65,7 @@ jobs:
           aws configure list-profiles
           cat ~/.aws/config
           cat ~/.aws/credentials
+          unset AWS_SESSION_TOKEN
           aws sts get-caller-identity --profile terraform
           aws s3 ls s3://dntnbucket002 --profile terraform
           TF_LOG=DEBUG terraform init -no-color
