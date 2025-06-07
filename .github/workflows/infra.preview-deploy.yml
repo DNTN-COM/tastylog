@@ -53,9 +53,9 @@ jobs:
           echo "region = $AWS_REGION" >> ~/.aws/config
           echo "output = json" >> ~/.aws/config
           
-          aws configure list-profiles
-          export AWS_PROFILE=terraform
+          #aws configure list-profiles
+          #export AWS_PROFILE=terraform
 
-          aws sts get-caller-identity
-          aws s3 ls s3://dntnbucket002
+          #aws sts get-caller-identity
+          #aws s3 ls s3://dntnbucket002
           TF_LOG=DEBUG terraform init -no-color
