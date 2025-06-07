@@ -46,9 +46,6 @@ jobs:
           aws-region: ${{ env.AWS_REGION }}
           role-to-assume: ${{ secrets.AWS_IAM_ROLE_ARN }}
 
-      - name: Set AWS Profile
-        run: echo "AWS_PROFILE=terraform" >> $GITHUB_ENV
-
       - name: Terraform init
         run: |
           mkdir -p ~/.aws
@@ -57,8 +54,8 @@ jobs:
           echo "output = json" >> ~/.aws/config
           
           aws configure list-profiles
-          
           export AWS_PROFILE=terraform
+          
           aws sts get-caller-identity --profile terraform
           aws s3 ls s3://dntnbucket002 --profile terraform
           TF_LOG=DEBUG terraform init -no-color
