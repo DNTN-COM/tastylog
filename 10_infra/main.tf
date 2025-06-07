@@ -21,6 +21,7 @@ terraform {
 # Provider
 # ---------------------------------------------
 provider "aws" {
+  alias   = "tokyo"
   profile = "terraform"
   region  = "ap-northeast-1"
 }
