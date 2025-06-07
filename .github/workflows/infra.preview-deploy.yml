@@ -56,8 +56,12 @@ jobs:
           echo "AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY"
           mkdir -p ~/.aws
           echo "[profile terraform]" >> ~/.aws/config
-          echo "region = ap-northeast-1" >> ~/.aws/config
+          echo "region = $AWS_REGION" >> ~/.aws/config
           echo "output = json" >> ~/.aws/config
+          echo "[terraform]" >> ~/.aws/credentials
+          echo "aws_access_key_id = $AWS_ACCESS_KEY_ID" >> ~/.aws/credentials
+          echo "aws_secret_access_key = $AWS_SECRET_ACCESS_KEY" >> ~/.aws/credentials
+          echo "region = $AWS_REGION" >> ~/.aws/credentials
           aws configure list-profiles
           cat ~/.aws/config
           cat ~/.aws/credentials
