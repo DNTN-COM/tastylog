@@ -11,7 +11,8 @@ jobs:
       - name: Slack notify
         uses: slackapi/slack-github-action@v2.1.0
         with:
-          channel-id: "C090JHN29TL"
+          webhook: ${{ secrets.SLACK_WEBHOOK_URL }} 
+          #channel-id: "C090JHN29TL"
           payload: |
             {
               "attachments": [
